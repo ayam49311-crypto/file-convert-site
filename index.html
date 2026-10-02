@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="File Convert - Convert images to PDF, PDF to Word and Excel, Word to PDF and Excel to PDF directly from Telegram.">
+
+    <title>File Convert — Fast File Conversion</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #080b12;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        header {
+            max-width: 1100px;
+            margin: auto;
+            padding: 25px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            display: inline-flex;
+            width: 36px;
+            height: 36px;
+            align-items: center;
+            justify-content: center;
+            background: #6d5dfc;
+            border-radius: 10px;
+            margin-right: 8px;
+        }
+
+        .top-button {
+            background: #6d5dfc;
+            padding: 11px 18px;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        .hero {
+            max-width: 900px;
+            margin: 80px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 7px 14px;
+            border: 1px solid #30364c;
+            border-radius: 30px;
+            color: #bdb7ff;
+            background: #121728;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 8vw, 78px);
+            line-height: 1.05;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #8b7cff;
+        }
+
+        .hero p {
+            max-width: 680px;
+            margin: auto;
+            color: #9ca6b7;
+            font-size: 18px;
+        }
+
+        .buttons {
+            margin: 35px 0;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .primary {
+            background: #6d5dfc;
+            padding: 14px 24px;
+            border-radius: 12px;
+            font-weight: bold;
+        }
+
+        .secondary {
+            border: 1px solid #303746;
+            padding: 13px 24px;
+            border-radius: 12px;
+            background: #10151f;
+            font-weight: bold;
+        }
+
+        .trust {
+            color: #7f8a9e;
+            font-size: 14px;
+        }
+
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            margin-bottom: 40px;
+        }
+
+        .section-title small {
+            color: #9186ff;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+
+        .section-title h2 {
+            font-size: 42px;
+            margin: 10px 0;
+        }
+
+        .section-title p {
+            color: #9ca6b7;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .card {
+            background: #111621;
+            border: 1px solid #242c3a;
+            border-radius: 18px;
+            padding: 28px;
+            min-height: 190px;
+        }
+
+        .card-icon {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            color: #9ca6b7;
+            font-size: 14px;
+        }
+
+        .steps {
+            border-top: 1px solid #242c3a;
+        }
+
+        .step-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .step {
+            background: #0e131c;
+            border: 1px solid #242c3a;
+            border-radius: 18px;
+            padding: 28px;
+        }
+
+        .number {
+            color: #9186ff;
+            font-weight: bold;
+        }
+
+        .step h3 {
+            margin: 15px 0 8px;
+        }
+
+        .step p {
+            color: #9ca6b7;
+        }
+
+        .cta {
+            max-width: 1060px;
+            margin: 30px auto 90px;
+            padding: 50px;
+            border-radius: 24px;
+            background: linear-gradient(120deg, #29215c, #172d50);
+            border: 1px solid #3d4568;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .cta h2 {
+            font-size: 40px;
+            line-height: 1.1;
+            margin: 10px 0;
+        }
+
+        .cta p {
+            color: #b9c2d2;
+        }
+
+        .cta .primary {
+            background: white;
+            color: #10131c;
+            white-space: nowrap;
+        }
+
+        footer {
+            border-top: 1px solid #242c3a;
+            text-align: center;
+            padding: 45px 20px;
+            color: #9ca6b7;
+        }
+
+        footer a {
+            color: #9f95ff;
+            display: block;
+            margin: 10px;
+        }
+
+        @media (max-width: 800px) {
+            .features,
+            .step-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cta {
+                margin: 20px;
+                display: block;
+            }
+
+            .cta .primary {
+                display: inline-block;
+                margin-top: 25px;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .features,
+            .step-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                margin: 55px auto;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .section-title h2 {
+                font-size: 34px;
+            }
+
+            header {
+                padding: 18px 15px;
+            }
+
+            .top-button {
+                padding: 9px 12px;
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <a href="#" class="logo
